@@ -38,9 +38,9 @@ iscpp()
 {
     if [ -z "${PASS}" ] ;
     then
-        scp ${SCP_OPTS} ${@}
+        scp ${SCP_OPTS} ${@} || exit
     else
-        sshpass -p ${PASS} scp ${SCP_OPTS} ${@}
+        sshpass -p ${PASS} scp ${SCP_OPTS} ${@} || exit
     fi
 }
 
